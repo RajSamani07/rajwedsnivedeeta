@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raj weds Nivedeeta | June 2026</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Outfit:wght@300;400;500&family=Hind+Vadodara:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        /* Modern Minimalist Variables */
+        :root {
+            --bg-color: #FDFCFB; /* Alabaster White */
+            --text-main: #222222; /* Soft Black */
+            --text-light: #666666; /* Gray */
+            --accent-gold: #C2A878; /* Champagne Gold */
+            --accent-dark: #3A3532; /* Deep Taupe */
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Outfit', 'Hind Vadodara', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.7;
+            overflow-x: hidden;
+            font-weight: 300;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Cormorant Garamond', 'Hind Vadodara', serif;
+            font-weight: 400;
+        }
+
+        /* Language Toggle Button */
+        .language-toggle {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 5px;
+            border-radius: 30px;
+            border: 1px solid var(--accent-gold);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            display: flex;
+            align-items: center;
+        }
+
+        .language-toggle button {
+            background: transparent;
+            border: none;
+            padding: 8px 15px;
+            cursor: pointer;
+            font-family: 'Outfit', sans-serif;
+            font-size: 0.9rem;
+            color: var(--text-light);
+            border-radius: 20px;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 500;
+            margin: 0;
+            width: auto;
+        }
+
+        .language-toggle button.active {
+            background-color: var(--accent-gold);
+            color: white;
+        }
+
+        .language-toggle .divider {
+            width: 1px;
+            height: 15px;
+            background-color: #ddd;
+            margin: 0 2px;
+        }
+
+        /* Sleek Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(rgba(253, 252, 251, 0.55), rgba(253, 252, 251, 0.9)), 
+                        url('couple-bg.jpg') center 30% / cover fixed;
+            padding: 20px;
+        }
+
+        .hero-date {
+            font-family: 'Outfit', 'Hind Vadodara', sans-serif;
+            font-size: 1rem;
+            letter-spacing: 6px;
+            color: var(--text-light);
+            text-transform: uppercase;
+            margin-bottom: 30px;
+        }
+
+        .hero h1 {
+            font-size: 5.5rem;
+            color: var(--accent-dark);
+            line-height: 1.1;
+            margin: 0;
+        }
+
+        .hero h1 span {
+            font-style: italic;
+            font-size: 3.5rem;
+            color: var(--accent-gold);
+            display: block;
+            margin: 10px 0;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            margin-top: 40px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: var(--text-main);
+        }
+
+        /* Countdown Timer */
+        .countdown {
+            display: flex;
+            gap: 40px;
+            margin-top: 60px;
+            justify-content: center;
+        }
+
+        .time-block {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        .time-block:not(:last-child)::after {
+            content: ':';
+            position: absolute;
+            right: -25px;
+            top: 10px;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2.5rem;
+            color: var(--accent-gold);
+            opacity: 0.5;
+        }
+
+        .time-val {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3.5rem;
+            color: var(--accent-gold);
+            line-height: 1;
+        }
+
+        .time-label {
+            font-family: 'Outfit', 'Hind Vadodara', sans-serif;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            color: var(--text-light);
+            margin-top: 15px;
+        }
+
+        .countdown-message {
+            font-family: 'Cormorant Garamond', 'Hind Vadodara', serif;
+            font-size: 2.5rem;
+            color: var(--accent-gold);
+            font-style: italic;
+            margin-top: 50px;
+        }
+
+        /* Introduction */
+        .intro {
+            padding: 120px 20px 60px; /* Reduced bottom padding slightly to pull image closer */
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .intro h2 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: var(--accent-dark);
+        }
+
+        .intro p {
+            font-size: 1.1rem;
+            color: var(--text-light);
+        }
+
+        /* Seamless Photo Feature (Arch Design) */
+        .photo-feature {
+            padding: 0 20px 100px;
+            background-color: var(--bg-color);
+            display: flex;
+            justify-content: center;
+        }
+
+        .photo-frame {
+            width: 100%;
+            max-width: 420px;
+            height: 550px;
+            padding: 12px;
+            border: 1px solid rgba(194, 168, 120, 0.4); /* subtle gold accent */
+            border-radius: 250px 250px 8px 8px; /* Elegant modern arch */
+            background-color: #FFFFFF;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.03);
+        }
+
+        .photo-bg {
+            width: 100%;
+            height: 100%;
+            /* Uses your new image, centered slightly higher to focus on faces */
+            background: url('couple-photo-2.jpg') center 25% / cover no-repeat;
+            border-radius: 240px 240px 4px 4px;
+        }
+
+        /* Families Section */
+        .families {
+            padding: 40px 20px 100px;
+            background-color: var(--bg-color);
+        }
+
+        .families h2 {
+            font-size: 3.5rem;
+            color: var(--accent-dark);
+            margin-bottom: 60px;
+            text-align: center;
+        }
+
+        .family-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            gap: 40px;
+            justify-content: center;
+        }
+
+        .family-column {
+            flex: 1;
+            text-align: center;
+            background: #FFFFFF;
+            padding: 50px 30px;
+            border-top: 3px solid var(--accent-gold);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.03);
+            border-radius: 4px;
+        }
+
+        .family-column h3 {
+            font-size: 1.5rem;
+            color: var(--accent-gold);
+            margin-bottom: 40px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            font-family: 'Outfit', 'Hind Vadodara', sans-serif;
+            font-weight: 500;
+        }
+
+        .family-group {
+            margin-bottom: 35px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .family-group:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .family-role {
+            display: block;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            color: var(--text-light);
+            margin-bottom: 12px;
+        }
+
+        .family-names {
+            display: block;
+            font-size: 1.4rem;
+            color: var(--accent-dark);
+            font-family: 'Cormorant Garamond', 'Hind Vadodara', serif;
+            font-style: italic;
+            line-height: 1.4;
+        }
+
+        .extended-family {
+            margin-top: 5px;
+            font-size: 0.95rem;
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        .extended-family span {
+            display: block;
+        }
+
+        .uncle-block {
+            margin-bottom: 25px;
+        }
+
+        .uncle-block:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Kids Tahuko Section */
+        .kids-invite {
+            max-width: 800px;
+            margin: 60px auto 0;
+            padding: 40px 30px;
+            background: rgba(194, 168, 120, 0.05);
+            border: 1px dashed var(--accent-gold);
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .kids-invite h4 {
+            font-size: 2.2rem;
+            color: var(--accent-gold);
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+
+        .kids-invite p {
+            font-size: 1.1rem;
+            color: var(--text-main);
+            margin-bottom: 25px;
+            line-height: 1.8;
+            font-weight: 300;
+        }
+
+        .kids-names {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 20px;
+        }
+
+        .kids-team {
+            text-align: center;
+        }
+
+        .kids-team span {
+            display: block;
+            font-family: 'Outfit', 'Hind Vadodara', sans-serif;
+            font-weight: 500;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            color: var(--text-light);
+            margin-bottom: 5px;
+        }
+
+        .kids-team strong {
+            font-family: 'Cormorant Garamond', 'Hind Vadodara', serif;
+            font-size: 1.4rem;
+            color: var(--accent-dark);
+            font-style: italic;
+        }
+
+        /* Modern Itinerary */
+        .events {
+            padding: 100px 20px;
+            background-color: #FFFFFF;
+            border-top: 1px solid #eaeaea;
+        }
+
+        .events-header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
+
+        .events-header h2 {
+            font-size: 3.5rem;
+            color: var(--accent-dark);
+        }
+
+        .timeline {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .event-item {
+            display: flex;
+            margin-bottom: 80px;
+            position: relative;
+        }
+
+        .event-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .event-date {
+            flex: 0 0 150px;
+            text-align: right;
+            padding-right: 40px;
+            border-right: 1px solid var(--accent-gold);
+        }
+
+        .event-date .day {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3.5rem;
+            line-height: 1;
+            color: var(--accent-dark);
+        }
+
+        .event-date .month-year {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--text-light);
+            margin-top: 5px;
+        }
+
+        .event-details {
+            padding-left: 40px;
+            flex-grow: 1;
+        }
+
+        .event-details h3 {
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+            color: var(--text-main);
+        }
+
+        .event-time-loc {
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+            color: var(--text-light);
+        }
+
+        .event-time-loc p {
+            margin-bottom: 5px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .event-time-loc i {
+            color: var(--accent-gold);
+            font-size: 0.9rem;
+        }
+
+        .event-desc {
+            font-size: 1rem;
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        /* Venue Details */
+        .venue {
+            padding: 120px 20px;
+            text-align: center;
+            background-color: var(--accent-dark);
+            color: var(--bg-color);
+        }
+
+        .venue h2 {
+            font-size: 3rem;
+            color: var(--accent-gold);
+            margin-bottom: 30px;
+        }
+
+        .venue-name {
+            font-size: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 15px;
+            font-weight: 500;
+        }
+
+        .venue-address {
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+            font-weight: 300;
+            letter-spacing: 1px;
+            color: #eeeeee;
+        }
+
+        /* Directions Button */
+        .btn-directions {
+            display: inline-block;
+            margin-top: 25px;
+            padding: 15px 35px;
+            background-color: var(--accent-gold);
+            color: var(--bg-color);
+            text-decoration: none;
+            font-family: 'Outfit', 'Hind Vadodara', sans-serif;
+            font-weight: 500;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: all 0.3s ease;
+            border: 1px solid var(--accent-gold);
+        }
+
+        .btn-directions i {
+            margin-right: 8px;
+        }
+
+        .btn-directions:hover {
+            background-color: transparent;
+            color: var(--accent-gold);
+        }
+
+        /* Interactive Map Container */
+        .map-container {
+            max-width: 900px;
+            margin: 50px auto 0;
+            padding: 8px;
+            background-color: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--accent-gold);
+        }
+
+        .map-container iframe {
+            width: 100%;
+            height: 450px;
+            border: none;
+            display: block;
+            filter: contrast(1.1) opacity(0.9); 
+            transition: filter 0.3s ease;
+        }
+
+        .map-container iframe:hover {
+            filter: contrast(1) opacity(1);
+        }
+
+        /* Minimalist Footer */
+        footer {
+            padding: 60px 20px;
+            text-align: center;
+            border-top: 1px solid #eaeaea;
+        }
+
+        footer p {
+            font-family: 'Cormorant Garamond', 'Hind Vadodara', serif;
+            font-size: 1.5rem;
+            color: var(--text-light);
+            font-style: italic;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 4rem; }
+            .hero h1 span { font-size: 2.2rem; }
+            
+            .countdown { gap: 20px; margin-top: 40px; }
+            .time-val { font-size: 2.5rem; }
+            .time-label { font-size: 0.7rem; letter-spacing: 2px; }
+            .time-block:not(:last-child)::after { right: -13px; font-size: 1.8rem; }
+            
+            .photo-frame { height: 480px; border-radius: 200px 200px 8px 8px; }
+            .photo-bg { border-radius: 190px 190px 4px 4px; }
+            
+            .family-container { flex-direction: column; gap: 40px; }
+            .family-column { padding: 40px 20px; }
+
+            .kids-names { flex-direction: column; gap: 20px; }
+
+            .event-item {
+                flex-direction: column;
+                margin-bottom: 60px;
+            }
+            .event-date {
+                text-align: left;
+                padding-right: 0;
+                padding-bottom: 20px;
+                border-right: none;
+                border-bottom: 1px solid var(--accent-gold);
+                margin-bottom: 20px;
+                flex: none;
+            }
+            .event-details { padding-left: 0; }
+            
+            .map-container iframe {
+                height: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="language-toggle">
+        <button id="btn-en" class="active" onclick="switchLanguage('en')">EN</button>
+        <div class="divider"></div>
+        <button id="btn-gu" onclick="switchLanguage('gu')">ગુજ</button>
+    </div>
+
+    <section class="hero">
+        <div class="hero-date" data-aos="fade-down" data-aos-duration="1000" data-en="June 2026" data-gu="જૂન ૨૦૨૬">June 2026</div>
+        <h1 data-aos="zoom-in" data-aos-duration="1500" data-en="Raj <span>weds</span> Nivedeeta" data-gu="રાજ <span>weds</span> નિવેદિતા">
+            Raj
+            <span>weds</span> 
+            Nivedeeta
+        </h1>
+        <p data-aos="fade-up" data-aos-duration="1200" data-en="The Wedding Celebration" data-gu="લગ્નોત્સવ">The Wedding Celebration</p>
+        
+        <div class="countdown" id="countdown" data-aos="fade-up" data-aos-duration="1800">
+            <div class="time-block">
+                <span id="days" class="time-val">00</span>
+                <span class="time-label" data-en="Days" data-gu="દિવસ">Days</span>
+            </div>
+            <div class="time-block">
+                <span id="hours" class="time-val">00</span>
+                <span class="time-label" data-en="Hours" data-gu="કલાક">Hours</span>
+            </div>
+            <div class="time-block">
+                <span id="minutes" class="time-val">00</span>
+                <span class="time-label" data-en="Mins" data-gu="મિનિટ">Mins</span>
+            </div>
+            <div class="time-block">
+                <span id="seconds" class="time-val">00</span>
+                <span class="time-label" data-en="Secs" data-gu="સેકન્ડ">Secs</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="intro" data-aos="fade-up">
+        <h2 data-en="Join Us" data-gu="પધારો">Join Us</h2>
+        <p data-en="We are delighted to invite you to share in our joy as we begin our new life together. Your presence and blessings will make our wedding celebration truly unforgettable." data-gu="અમારા નવા જીવનની શરૂઆતમાં તમારી હાજરી અને આશીર્વાદ અમારા લગ્નોત્સવને ખરેખર અવિસ્મરણીય બનાવશે. આપ સૌને સહર્ષ આમંત્રણ છે.">We are delighted to invite you to share in our joy as we begin our new life together. Your presence and blessings will make our wedding celebration truly unforgettable.</p>
+    </section>
+
+    <section class="photo-feature" data-aos="fade-up" data-aos-duration="1200">
+        <div class="photo-frame">
+            <div class="photo-bg"></div>
+        </div>
+    </section>
+
+    <section class="families">
+        <h2 data-aos="fade-up" data-en="With Blessings From" data-gu="આશીર્વાદ સહ">With Blessings From</h2>
+        <div class="family-container">
+            
+            <div class="family-column" data-aos="fade-up" data-aos-delay="100">
+                <h3 data-en="The Samani Family" data-gu="સામાણી પરિવાર">The Samani Family</h3>
+                
+                <div class="family-group">
+                    <span class="family-role" data-en="Paternal Grandparents" data-gu="દાદા - દાદી">Paternal Grandparents</span>
+                    <span class="family-names" data-en="Late Vallabhbhai Haribhai Samani<br>Late Kantaben Vallabhbhai Samani" data-gu="સ્વ. વલ્લભભાઈ હરિભાઈ સામાણી<br>સ્વ. કાંતાબેન વલ્લભભાઈ સામાણી">
+                        Late Vallabhbhai Haribhai Samani<br>
+                        Late Kantaben Vallabhbhai Samani
+                    </span>
+                </div>
+
+                <div class="family-group">
+                    <span class="family-role" data-en="Maternal Grandparents" data-gu="નાના - નાની">Maternal Grandparents</span>
+                    <span class="family-names" data-en="Vrajlal Sadariya<br>Late Champaben Vrajlal Sadariya" data-gu="વ્રજલાલ સાદરિયા<br>સ્વ. ચંપાબેન વ્રજલાલ સાદરિયા">
+                        Vrajlal Sadariya<br>
+                        Late Champaben Vrajlal Sadariya
+                    </span>
+                </div>
+                
+                <div class="family-group">
+                    <span class="family-role" data-en="Parents" data-gu="માતા - પિતા">Parents</span>
+                    <span class="family-names" data-en="Suresh Vallabhbhai Samani<br>Pragna Suresh Samani" data-gu="સુરેશ વલ્લભભાઈ સામાણી<br>પ્રજ્ઞા સુરેશ સામાણી">
+                        Suresh Vallabhbhai Samani<br>
+                        Pragna Suresh Samani
+                    </span>
+                </div>
+                
+                <div class="family-group">
+                    <span class="family-role" data-en="Paternal Uncles & Aunts" data-gu="કાકા - કાકી">Paternal Uncles & Aunts</span>
+                    
+                    <div class="uncle-block">
+                        <span class="family-names" data-en="Vijaybhai & Tara Samani" data-gu="વિજયભાઈ અને તારાબેન સામાણી">Vijaybhai & Tara Samani</span>
+                        <div class="extended-family">
+                            <span data-en="Shweta & Nirav Dudani" data-gu="શ્વેતા અને નીરવ દુદાણી">Shweta & Nirav Dudani</span>
+                            <span data-en="Hiren & Kruti Samani" data-gu="હિરેન અને કૃતિ સામાણી">Hiren & Kruti Samani</span>
+                        </div>
+                    </div>
+
+                    <div class="uncle-block">
+                        <span class="family-names" data-en="Kiritbhai & Varshaben Samani" data-gu="કિરીટભાઈ અને વર્ષાબેન સામાણી">Kiritbhai & Varshaben Samani</span>
+                        <div class="extended-family">
+                            <span data-en="Anjali & Naimish Dadhania" data-gu="અંજલિ અને નૈમિષ ડઢાણીયા">Anjali & Naimish Dadhania</span>
+                            <span data-en="Ravi & Hemal Samani" data-gu="રવિ અને હેમલ સામાણી">Ravi & Hemal Samani</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="family-group">
+                    <span class="family-role" data-en="Maternal Uncle & Aunt" data-gu="મામા - મામી">Maternal Uncle & Aunt</span>
+                    <span class="family-names" data-en="Prakash & Geeta Sadariya" data-gu="પ્રકાશભાઈ અને ગીતાબેન સાદરિયા">Prakash & Geeta Sadariya</span>
+                    <div class="extended-family">
+                        <span data-en="Zeel & Ansh" data-gu="ઝીલ અને અંશ">Zeel & Ansh</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="family-column" data-aos="fade-up" data-aos-delay="300">
+                <h3 data-en="The Godhani Family" data-gu="ગોધાણી પરિવાર">The Godhani Family</h3>
+                <div class="family-group">
+                    <span class="family-role" data-en="Paternal Grandparents" data-gu="દાદા - દાદી">Paternal Grandparents</span>
+                    <span class="family-names" data-en="Late Parsotambhai Dayabhai Godhani<br>Late Labhu Parsotambhai Godhani" data-gu="સ્વ. પરસોત્તમભાઈ ડાયાભાઈ ગોધાણી<br>સ્વ. લાભુબેન પરસોત્તમભાઈ ગોધાણી">
+                        Late Parsotambhai Dayabhai Godhani<br>
+                        Late Labhu Parsotambhai Godhani
+                    </span>
+                </div>
+
+                <div class="family-group">
+                    <span class="family-role" data-en="Maternal Grandparents" data-gu="નાના - નાની">Maternal Grandparents</span>
+                    <span class="family-names" data-en="Chimanbhai Jasmatbhai Kalariya<br>Savitriben Chimanbhai Kalariya" data-gu="ચીમનભાઈ જસમતભાઈ કાલરીયા<br>સાવિત્રીબેન ચીમનભાઈ કાલરીયા">
+                        Chimanbhai Jasmatbhai Kalariya<br>
+                        Savitriben Chimanbhai Kalariya
+                    </span>
+                </div>
+                <div class="family-group">
+                    <span class="family-role" data-en="Parents" data-gu="માતા - પિતા">Parents</span>
+                    <span class="family-names" data-en="Late Shree Prabhudas Godhani<br>Kiran Prabhudas Godhani" data-gu="સ્વ. પ્રભુદાસ ગોધાણી<br>કિરણબેન પ્રભુદાસ ગોધાણી">
+                        Late Shree Prabhudas Godhani<br>
+                        Kiran Prabhudas Godhani
+                    </span>
+                </div>
+                
+                <div class="family-group">
+                    <span class="family-role" data-en="Brother" data-gu="ભાઈ">Brother</span>
+                    <span class="family-names" data-en="Savan Prabhudas Godhani" data-gu="સાવન પ્રભુદાસ ગોધાણી">
+                        Savan Prabhudas Godhani
+                    </span>
+                </div>
+                <div class="family-group">
+                    <span class="family-role" data-en="Maternal Uncle & Aunt" data-gu="મામા - મામી">Maternal Uncle & Aunt</span>
+                    <span class="family-names" data-en="Bhaveshbhai & Manishaben Kalariya" data-gu="ભાવેશભાઈ અને મનીષાબેન કાલરીયા">Bhaveshbhai & Manishaben Kalariya</span>
+                    <div class="extended-family">
+                        <span data-en="Ridham & Priyal" data-gu="રિધમ અને પ્રિયલ">Ridham & Priyal</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="kids-invite" data-aos="fade-up" data-aos-delay="400">
+
+            <h4 data-en="A Special Invitation" data-gu="બાળકોનું ટહુકું">A Special Invitation</h4>
+
+            <p data-en="Our favorite Kaka and Mama is finally getting married! You have to come to his wedding to dance with us, eat all the yummy sweets!" data-gu="અમારા વહાલા કાકા અને મામા ના લગ્ન માં આવવાનું ભૂલતા નહિ. આપણે ખૂબ ડાન્સ કરીશું અને મીઠાઈઓ ખાઈશું!">Our favorite Kaka and Mama is finally getting married! You have to come to his wedding to dance with us, eat all the yummy sweets!</p>
+
+            <div class="kids-names">
+
+                <div class="kids-team">
+
+                    <span data-en="From his Niece & Nephew" data-gu="લિ. ભત્રીજા અને ભાણિયા">From his Niece & Nephew</span>
+
+                    <strong data-en="Mantra, Kalp, Ruhi, Dwij, Jiyansh & Kiyan" data-gu="મંત્ર, કલ્પ, રૂહી, દ્વિજ, જીયાંશ અને કિયાન">Mantra, Kalp, Ruhi, Dwij, Jiyansh & Kiyan</strong>
+
+                </div>
+
+            </div>
+
+        </div>
+        
+    </section>
+
+    <section class="events">
+        <div class="events-header" data-aos="fade-up">
+            <h2 data-en="The Itinerary" data-gu="કાર્યક્રમ">The Itinerary</h2>
+        </div>
+        
+        <div class="timeline">
+            <div class="event-item" data-aos="fade-up">
+                <div class="event-date">
+                    <div class="day">21</div>
+                    <div class="month-year" data-en="June 2026" data-gu="જૂન ૨૦૨૬">June 2026</div>
+                </div>
+                <div class="event-details">
+                    <h3 data-en="Mandvo, Pithi & Sanji" data-gu="માંડવો, પીઠી અને સાંજી">Mandvo, Pithi & Sanji</h3>
+                    <div class="event-time-loc">
+                        <p><i class="fa-regular fa-sun"></i> <span data-en="9:00 AM — Mandap Mahurat & Pithi" data-gu="સવારે ૯:૦૦ — મંડપ મુહૂર્ત અને પીઠી">9:00 AM — Mandap Mahurat & Pithi</span></p>
+                        <p><i class="fa-regular fa-moon"></i> <span data-en="7:30 PM — Sanji (Garba Night)" data-gu="સાંજે ૭:૩૦ — સાંજી (રાસ ગરબા)">7:30 PM — Sanji (Garba Night)</span></p>
+                        <p><i class="fa-solid fa-location-arrow"></i> <span data-en="Speedwell Banquet Hall, Rajkot" data-gu="સ્પીડવેલ બેન્કવેટ હોલ, રાજકોટ">Speedwell Banquet Hall, Rajkot</span></p>
+                    </div>
+                    <div class="event-desc" data-en="A day of traditional blessings and vibrant colors, culminating in an evening of music, dance, and authentic Gujarati Garba." data-gu="પરંપરાગત આશીર્વાદ અને રંગોથી ભરેલો દિવસ, જેની પૂર્ણાહુતિ સંગીત, નૃત્ય અને ગરબાથી થશે.">
+                        A day of traditional blessings and vibrant colors, culminating in an evening of music, dance, and authentic Gujarati Garba.
+                    </div>
+                </div>
+            </div>
+
+            <div class="event-item" data-aos="fade-up">
+                <div class="event-date">
+                    <div class="day">22</div>
+                    <div class="month-year" data-en="June 2026" data-gu="જૂન ૨૦૨૬">June 2026</div>
+                </div>
+                <div class="event-details">
+                    <h3 data-en="The Wedding" data-gu="લગ્ન પ્રસંગ">The Wedding</h3>
+                    <div class="event-time-loc">
+                        <p><i class="fa-solid fa-music"></i> <span data-en="9:30 AM — Jaan Arrival" data-gu="સવારે ૯:૩૦ — જાન આગમન">9:30 AM — Jaan Arrival</span></p>
+                        <p><i class="fa-solid fa-leaf"></i> <span data-en="11:45 AM — Hast Melap" data-gu="સવારે ૧૧:૪૫ — હસ્ત મેળાપ">11:45 AM — Hast Melap</span></p>
+                        <p><i class="fa-solid fa-location-arrow"></i> <span data-en="Speedwell Banquet Hall, Rajkot" data-gu="સ્પીડવેલ બેન્કવેટ હોલ, રાજકોટ">Speedwell Banquet Hall, Rajkot</span></p>
+                    </div>
+                    <div class="event-desc" data-en="Witness our union as we take our vows and perform the sacred rituals. A traditional celebratory feast will follow the ceremony." data-gu="અમારા પવિત્ર લગ્ન સંસ્કારમાં સાક્ષી બનો અને ત્યારબાદ ભોજન સમારંભમાં પધારો.">
+                        Witness our union as we take our vows and perform the sacred rituals. A traditional celebratory feast will follow the ceremony.
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="venue">
+        <h2 data-aos="fade-up" data-en="Location" data-gu="સ્થળ">Location</h2>
+        <div data-aos="zoom-in" data-aos-delay="100">
+            <p class="venue-name" data-en="Speedwell Banquet Hall" data-gu="સ્પીડવેલ બેન્કવેટ હોલ">Speedwell Banquet Hall</p>
+            <p class="venue-address" data-en="Makaiwala Speedwell Chowk," data-gu="મકાઈવાલા સ્પીડવેલ ચોક,">Makaiwala Speedwell Chowk,</p>
+            <p class="venue-address" data-en="Mota Mava, Rajkot, Gujarat" data-gu="મોટા મવા, રાજકોટ, ગુજરાત">Mota Mava, Rajkot, Gujarat</p>
+            
+            <a href="https://www.google.com/maps/dir/?api=1&destination=Speedwell+Banquet+Hall,+Makaiwala+Speedwell+Chowk,+Mota+Mava,+Rajkot,+Gujarat" target="_blank" class="btn-directions">
+                <i class="fa-solid fa-map-location-dot"></i> <span data-en="Get Directions" data-gu="રસ્તો જુઓ">Get Directions</span>
+            </a>
+            
+            <div class="map-container">
+                <iframe 
+                    src="https://maps.google.com/maps?q=Speedwell+Party+Plot,+Rajkot,+Gujarat&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p data-en="With love, Samani & Godhani Parivar" data-gu="પ્રેમ સહ, સામાણી અને ગોધાણી પરિવાર">With love, Samani & Godhani Parivar</p>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            once: true,
+            offset: 50
+        });
+
+        // --- LANGUAGE TOGGLE JAVASCRIPT ---
+        let currentLanguage = 'en';
+
+        function switchLanguage(lang) {
+            currentLanguage = lang;
+            
+            // Swap all texts based on data attributes
+            document.querySelectorAll('[data-en]').forEach(el => {
+                el.innerHTML = el.getAttribute('data-' + lang);
+            });
+
+            // Update button active state
+            document.getElementById('btn-en').classList.remove('active');
+            document.getElementById('btn-gu').classList.remove('active');
+            document.getElementById('btn-' + lang).classList.add('active');
+        }
+
+
+        // --- COUNTDOWN TIMER JAVASCRIPT ---
+        const countDownDate = new Date("Jun 22, 2026 09:30:00").getTime();
+
+        const x = setInterval(function() {
+            const now = new Date().getTime();
+            const distance = countDownDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            if(document.getElementById("days")) {
+                document.getElementById("days").innerHTML = days < 10 ? "0" + days : days;
+                document.getElementById("hours").innerHTML = hours < 10 ? "0" + hours : hours;
+                document.getElementById("minutes").innerHTML = minutes < 10 ? "0" + minutes : minutes;
+                document.getElementById("seconds").innerHTML = seconds < 10 ? "0" + seconds : seconds;
+            }
+
+            if (distance < 0) {
+                clearInterval(x);
+                // Print completion message utilizing data attributes to support language switch
+                document.getElementById("countdown").innerHTML = 
+                    "<div class='countdown-message' data-en='The Big Day is Here!' data-gu='શુભ ઘડી આવી ગઈ છે!'>The Big Day is Here!</div>";
+                // Trigger translation update for the newly added node
+                switchLanguage(currentLanguage);
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
