@@ -82,22 +82,27 @@
         }
 
         /* Sleek Hero Section */
-        .hero {
-    height: 100svh;
+.hero {
+    height: 100svh; /* ✅ Fix for iPhone viewport */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
 
-    background: linear-gradient(rgba(253, 252, 251, 0.55), rgba(253, 252, 251, 0.9)), 
+    background: linear-gradient(rgba(253, 252, 251, 0.55), rgba(253, 252, 251, 0.9)),
                 url('https://raw.githubusercontent.com/RajSamani07/rajwedsnivedeeta/main/couple-bg.jpg');
 
     background-position: center 30%;
     background-size: cover;
     background-repeat: no-repeat;
 
+    /* ❌ REMOVE this (breaks on iOS) */
+    /* background-attachment: fixed; */
+
     padding: 20px;
 }
+
         .hero-date {
             font-family: 'Outfit', 'Hind Vadodara', sans-serif;
             font-size: 1rem;
