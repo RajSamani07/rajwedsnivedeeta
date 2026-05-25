@@ -82,26 +82,20 @@
         }
 
         /* Sleek Hero Section */
-.hero {
-    height: 100svh; /* ✅ Fix for iPhone viewport */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-
-    background: linear-gradient(rgba(253, 252, 251, 0.55), rgba(253, 252, 251, 0.9)),
-                url('https://raw.githubusercontent.com/RajSamani07/rajwedsnivedeeta/main/couple-bg.jpg');
-
-    background-position: center 30%;
-    background-size: cover;
-    background-repeat: no-repeat;
-
-    /* ❌ REMOVE this (breaks on iOS) */
-    /* background-attachment: fixed; */
-
-    padding: 20px;
-}
+        .hero {
+            height: 100svh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            background: linear-gradient(rgba(253, 252, 251, 0.55), rgba(253, 252, 251, 0.9)),
+                        url('https://raw.githubusercontent.com/RajSamani07/rajwedsnivedeeta/main/couple-bg.jpg');
+            background-position: center 30%;
+            background-size: cover;
+            background-repeat: no-repeat;
+            padding: 20px;
+        }
 
         .hero-date {
             font-family: 'Outfit', 'Hind Vadodara', sans-serif;
@@ -187,7 +181,7 @@
 
         /* Introduction */
         .intro {
-            padding: 120px 20px 60px; /* Reduced bottom padding slightly to pull image closer */
+            padding: 120px 20px 60px;
             text-align: center;
             max-width: 700px;
             margin: 0 auto;
@@ -217,8 +211,8 @@
             max-width: 420px;
             height: 550px;
             padding: 12px;
-            border: 1px solid rgba(194, 168, 120, 0.4); /* subtle gold accent */
-            border-radius: 250px 250px 8px 8px; /* Elegant modern arch */
+            border: 1px solid rgba(194, 168, 120, 0.4);
+            border-radius: 250px 250px 8px 8px;
             background-color: #FFFFFF;
             box-shadow: 0 15px 40px rgba(0,0,0,0.03);
         }
@@ -226,7 +220,6 @@
         .photo-bg {
             width: 100%;
             height: 100%;
-            /* Uses your new image, centered slightly higher to focus on faces */
             background: url('https://raw.githubusercontent.com/RajSamani07/rajwedsnivedeeta/refs/heads/main/couple-photo-2.jpg') center 25% / cover no-repeat;
             border-radius: 240px 240px 4px 4px;
         }
@@ -558,6 +551,26 @@
             font-style: italic;
         }
 
+        /* Developer Credit Styling */
+        .developer-credit {
+            margin-top: 15px;
+            font-family: 'Outfit', 'Hind Vadodara', sans-serif;
+            font-size: 0.85rem;
+            color: var(--text-light);
+            letter-spacing: 1px;
+        }
+
+        .developer-credit a {
+            color: var(--accent-gold);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        .developer-credit a:hover {
+            color: var(--accent-dark);
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
             .hero h1 { font-size: 4rem; }
@@ -839,6 +852,10 @@
 
     <footer>
         <p data-en="With love, Samani & Godhani Parivar" data-gu="પ્રેમ સહ, સામાણી અને ગોધાણી પરિવાર">With love, Samani & Godhani Parivar</p>
+        <div class="developer-credit">
+            <span data-en="Designed & Developed by" data-gu="ડિઝાઇન અને ડેવલપમેન્ટ:">Designed & Developed by</span> 
+            <a href="https://rexontech.netlify.app/" target="_blank">Rexontech</a>
+        </div>
     </footer>
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
